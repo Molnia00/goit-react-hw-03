@@ -1,0 +1,35 @@
+.fckForm{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 2px solid #434141;
+    border-radius: 15px;
+}
+
+.titleh3{
+    text-align: left;
+}
+
+.fieldInput{
+    justify-content: flex-start;
+}
+
+
+.btnSubForm{
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
