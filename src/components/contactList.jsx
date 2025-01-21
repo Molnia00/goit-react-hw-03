@@ -1,14 +1,17 @@
 import Contact from './contacts';
-
+import s from './contact.module.css'
 
 
 
 function ContactList({ contacts}) {
   return (
-    <ul>
+    <ul className={s.listOfContacts}>
       {contacts.map(contact => (
-        <li key={contact.id}>
-          <Contact/>
+        <li className={s.iteamOfContacts} key={contact.id}>
+              <Contact
+                  name={contact.name }
+                  number={contact.number}
+              />
         </li>
       ))}
     </ul>
