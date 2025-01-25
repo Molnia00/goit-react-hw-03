@@ -22,6 +22,14 @@ function App() {
 ]
 );
 
+  function deleteContact(){
+
+  }
+  
+  function addContact(){
+
+  }
+
   const [search, setSearch] = useState('');
 
 
@@ -32,7 +40,7 @@ function App() {
   return (
     <>
       <h1>Phonebook</h1>
-      <ContactForm />
+      <ContactForm onPlus={addContact} />
      <SearchBox value={search} onSearch={setSearch} />
       <ContactList contacts={filteredContacts} />
       
