@@ -27,29 +27,29 @@ function ContactForm({ onAdd }) {
   };
 
 
-const initialValues = {
-  username: '',
-  phone: '',
-};
+  const initialValues = {
+    username: '',
+    phone: '',
+  };
 
   function ContactForm(onPus) {
   
-  const nameFieldId = useId();
-  const phoneFieldId = useId();
+    const nameFieldId = useId();
+    const phoneFieldId = useId();
 
-  const handleSumbit = (values, actions) => {
-    onPlus({
-      id: nanoid(),
-      name: values.username,
-      number: values.phone,
-    });
-    actions.resetForm();
-  };
+    const handleSumbit = (values, actions) => {
+      onPlus({
+        id: nanoid(),
+        name: values.username,
+        number: values.phone,
+      });
+      actions.resetForm();
+    };
 
     return (
 
       <Formik
-        initialValues={{ initialValues }} 
+        initialValues={{ initialValues }}
         validationSchema={ContactFormSchema}
         onSubmit={handleSumbit}
       >
@@ -59,15 +59,15 @@ const initialValues = {
             <label className={s.titleLabel} htmlFor={nameFieldId}>Phone</label>
             <Field className={s.fieldInput} id={nameFieldId} type="phone" name="phone" />
             <ErrorMessage
-            name="username"
-            component="span"
+              name="username"
+              component="span"
             />
             
             <label className={s.titleLabel} htmlFor={phoneFieldId}>Name</label>
             <Field className={s.fieldInput} id={phoneFieldId} type="text" name="username" />
             <ErrorMessage
-            name="phone"
-            component="span"
+              name="phone"
+              component="span"
             />
             
             <button className={s.btnSubForm} type="submit" >Add contact</button>
@@ -75,9 +75,9 @@ const initialValues = {
         </Form>
 
 
-    </Formik>
-  );
-};
-
+      </Formik>
+    );
+  };
+}
 
 export default ContactForm
