@@ -3,7 +3,7 @@ import s from './contact.module.css'
 
 
 
-function ContactList({ contacts}) {
+function ContactList({onDelete, contacts}) {
   return (
     <ul className={s.listOfContacts}>
       {contacts.map(contact => (

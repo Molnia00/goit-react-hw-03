@@ -13,29 +13,16 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 
-function ContactForm({ onAdd }) {
-  const nameFieldId = useId();
-  const phoneFieldId = useId();
 
-  const handleSumbit = (values, actions) => {
-    onAdd({
-      id: nanoid(),
-      name: values.username,
-      number: values.phone,
-    });
-    actions.resetForm();
-  };
-
-
-  const initialValues = {
-    username: '',
-    phone: '',
-  };
-
-  function ContactForm(onPus) {
+  function ContactForm(onPlus) {
   
     const nameFieldId = useId();
     const phoneFieldId = useId();
+
+    const initialValues = {
+    username: '',
+    phone: '',
+  };
 
     const handleSumbit = (values, actions) => {
       onPlus({
@@ -49,8 +36,8 @@ function ContactForm({ onAdd }) {
     return (
 
       <Formik
-        initialValues={{ initialValues }}
-        validationSchema={ContactFormSchema}
+        initialValues={ initialValues } 
+        validationSchema={FeedbackSchema}
         onSubmit={handleSumbit}
       >
 
@@ -59,14 +46,14 @@ function ContactForm({ onAdd }) {
             <label className={s.titleLabel} htmlFor={nameFieldId}>Phone</label>
             <Field className={s.fieldInput} id={nameFieldId} type="phone" name="phone" />
             <ErrorMessage
-              name="username"
+              name="phone"
               component="span"
             />
             
             <label className={s.titleLabel} htmlFor={phoneFieldId}>Name</label>
             <Field className={s.fieldInput} id={phoneFieldId} type="text" name="username" />
             <ErrorMessage
-              name="phone"
+              name="username"
               component="span"
             />
             
@@ -78,6 +65,6 @@ function ContactForm({ onAdd }) {
       </Formik>
     );
   };
-}
+
 
 export default ContactForm

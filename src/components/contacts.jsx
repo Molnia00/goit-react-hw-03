@@ -2,7 +2,7 @@ import { HiUser } from 'react-icons/hi';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import s from './contact.module.css'
 
-function Contact({ name, number }) {
+function Contact({ name, number, onDelete }) {
     return (
         <div>
 
