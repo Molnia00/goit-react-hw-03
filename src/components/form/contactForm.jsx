@@ -28,7 +28,7 @@ function ContactForm({ onPlus }) {
       onPlus({
         id: nanoid(),
         name: values.username,
-        number: values.phone,
+        number: values.number,
       });
       actions.resetForm();
     };
