@@ -7,21 +7,21 @@ import s from './IAmSoLazy.module.css'
 const FeedbackSchema = Yup.object().shape({
   username: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
 
-  phone: Yup.string().matches(
+  number: Yup.string().matches(
       /^\d{3}-\d{2}-\d{2}$/,
     'Phone number must be in the format XXX-XX-XX').required('Required'),
 });
 
 
 
-  function ContactForm(onPlus) {
+function ContactForm({ onPlus }) {
   
     const nameFieldId = useId();
     const phoneFieldId = useId();
 
     const initialValues = {
     username: '',
-    phone: '',
+    number: '',
   };
 
     const handleSumbit = (values, actions) => {
@@ -43,19 +43,21 @@ const FeedbackSchema = Yup.object().shape({
 
         <Form >
           <div className={s.fckForm}>
-            <label className={s.titleLabel} htmlFor={nameFieldId}>Phone</label>
-            <Field className={s.fieldInput} id={nameFieldId} type="phone" name="phone" />
-            <ErrorMessage
-              name="phone"
-              component="span"
-            />
-            
             <label className={s.titleLabel} htmlFor={phoneFieldId}>Name</label>
             <Field className={s.fieldInput} id={phoneFieldId} type="text" name="username" />
             <ErrorMessage
               name="username"
               component="span"
             />
+            
+            <label className={s.titleLabel} htmlFor={nameFieldId}>Phone</label>
+            <Field className={s.fieldInput} id={nameFieldId} type="tel" name="number" />
+            <ErrorMessage
+              name="number"
+              component="span"
+            />
+            
+            
             
             <button className={s.btnSubForm} type="submit" >Add contact</button>
           </div>

@@ -2,7 +2,7 @@ import { HiUser } from 'react-icons/hi';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import s from './contact.module.css'
 
-function Contact({ name, number, onDelete }) {
+function Contact({ id, name, number, onDelete }) {
     return (
         <div>
 
@@ -12,7 +12,7 @@ function Contact({ name, number, onDelete }) {
                 <p><BsFillTelephoneFill size="24" /> {number}</p>
             </div>
 
-            <button className={s.btnContactDelete} type="button" onSubmit={onDelete}>Delete</button>
+            <button className={s.btnContactDelete} type="button" onSubmit={() => onDelete(id) }>Delete</button>
 
 
         </div>
