@@ -12,7 +12,7 @@ function Contact({ id, name, number, onDelete }) {
                 <p><BsFillTelephoneFill size="24" /> {number}</p>
             </div>
 
-            <button className={s.btnContactDelete} type="button" onSubmit={() => onDelete(id) }>Delete</button>
+            <button className={s.btnContactDelete} type="button" onClick={() => onDelete(id) }>Delete</button>
 
 
         </div>

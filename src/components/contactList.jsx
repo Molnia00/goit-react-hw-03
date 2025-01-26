@@ -12,6 +12,7 @@ function ContactList({onDelete, contacts}) {
                   name={contact.name}
                   number={contact.number}
                   onDelete={onDelete}
+                  id={contact.id}
               />
         </li>
       ))}
