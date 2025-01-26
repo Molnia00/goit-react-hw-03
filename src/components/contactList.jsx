@@ -9,7 +9,7 @@ function ContactList({onDelete, contacts}) {
       {contacts.map(contact => (
         <li className={s.iteamOfContacts} key={contact.id}>
               <Contact
-                  name={contact.name }
+                  name={contact.name}
                   number={contact.number}
                   onDelete={onDelete}
               />

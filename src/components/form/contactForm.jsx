@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid/non-secure';
 import s from './IAmSoLazy.module.css'
 
 const FeedbackSchema = Yup.object().shape({
-  username: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
+  name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
 
   number: Yup.string().matches(
       /^\d{3}-\d{2}-\d{2}$/,
@@ -20,14 +20,14 @@ function ContactForm({ onPlus }) {
     const phoneFieldId = useId();
 
     const initialValues = {
-    username: '',
+    name: '',
     number: '',
   };
 
     const handleSumbit = (values, actions) => {
       onPlus({
         id: nanoid(),
-        name: values.username,
+        name: values.name,
         number: values.number,
       });
       actions.resetForm();
@@ -44,9 +44,9 @@ function ContactForm({ onPlus }) {
         <Form >
           <div className={s.fckForm}>
             <label className={s.titleLabel} htmlFor={phoneFieldId}>Name</label>
-            <Field className={s.fieldInput} id={phoneFieldId} type="text" name="username" />
+            <Field className={s.fieldInput} id={phoneFieldId} type="text" name="name" />
             <ErrorMessage
-              name="username"
+              name="name"
               component="span"
             />
             
